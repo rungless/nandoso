@@ -12,5 +12,6 @@ namespace nandoso.Models
         public int specialsID { get; set; }
         public string productName { get; set; }
         public double price { get; set; }
+        public string description { get; set; }
     }
 }

@@ -30,6 +30,11 @@ function setupSpecialsTable(specialsList) {
         priceCol.innerHTML = specialsList[i].price;
         row.appendChild(priceCol);
 
+        var descriptionCol = document.createElement('td');
+        descriptionCol.innerHTML = specialsList[i].description;
+        console.log(specialsList[i].description);
+        row.appendChild(descriptionCol);
+
         //Append the row to the end of the table
         specialsTable.appendChild(row);
 

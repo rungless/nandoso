@@ -8,7 +8,7 @@ var specialsModule = (function () {
             $.ajax({
                 type: "GET",
                 dataType: "json",
-                url: "https://nandosogy.azurewebsites.net/api/specials",
+                url: "http://nandosogy.azurewebsites.net/api/specials",
                 success: function (data) {
                     callback(data);
                 }

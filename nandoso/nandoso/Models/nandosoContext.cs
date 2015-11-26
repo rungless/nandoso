@@ -30,9 +30,9 @@ namespace nandoso.Models
             {
                 var specials = new List<Specials>
             {
-                new Specials {specialsID = 1050, productName = "Chemistry",      price = 10.00, },
-                new Specials {specialsID = 4022, productName = "Microeconomics", price = 3.00, },
-                new Specials {specialsID = 4041, productName = "Macroeconomics", price = 3.00, }
+                new Specials {specialsID = 1011, productName = "Flame grilled chicken 1", price = 10.20, description = "This is our Flame grilled chicken 1"},
+                new Specials {specialsID = 1021, productName = "Flame grilled chicken 2", price = 13.50, description = "This is our Flame grilled chicken 2"},
+                new Specials {specialsID = 1042, productName = "Flame grilled chicken 3", price = 21.99, description = "This is our Flame grilled chicken 3"}
                
             };
                 specials.ForEach(s => context.Specials.AddOrUpdate(p => p.productName, s));

@@ -195,6 +195,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\nandosogy - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\nandosogy - Web Deploy %282%29.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="LiveChat.html" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
