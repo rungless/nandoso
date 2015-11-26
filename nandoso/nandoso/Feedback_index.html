@@ -1,21 +1,41 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Feed Back</title>
 	<meta charset="utf-8" />
+    <link href="Content/style.css" rel="stylesheet" />
 </head>
-<body>
-    <a href="Index.html">Home</a>
-    <div id="fb-root"></div>
-    <script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1144878235540971";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<body class="body">
+    <header class="mainHeader">
+        <div class="title">
+            <p>Nandoso</p>
+        </div>
 
-    <div class="fb-comments" data-href="http://nandosogy.azurewebsites.net/Feedback_index.html" data-numposts="5"></div>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="Specials_index.html">Specials</a></li>
+                <li class="active"><a href="Feedback_index.html">Feedback</a></li>
+                <li><a href="LiveChat.html">Live Chat</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="mainContent">
+        <content>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1144878235540971";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+
+            <div class="fb-comments" data-href="http://nandosogy.azurewebsites.net/Feedback_index.html" data-numposts="5"></div>
+        </content>
+    </div>
 </body>
 </html>
