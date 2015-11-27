@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <link href="Content/sweetalert.css" rel="stylesheet" />
+    <script src="Scripts/sweetalert.min.js"></script>
+    <link href="Content/fakeLoader.css" rel="stylesheet" />
     <link href="Content/style.css" rel="stylesheet" />
     <title>Live Chat</title>
     <style type="text/css">
@@ -18,6 +21,25 @@
 </head>
 <body class="body">
 
+    <div id="fakeLoader"></div>
+
+    <!-- Include jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="Scripts/fakeLoader.min.js"></script>
+
+    <!-- Using fakeLoader -->
+    <script type="text/javascript">
+    $("#fakeLoader").fakeLoader({
+        // imagePath:"yourPath/customizedImage.gif", //If you want can you insert your custom image
+        timeToHide: 1000,       // Animation lasts 1000 ms
+        zIndex: 999,            // Make sure that the loader is always on top of any other elements
+        spinner: "spinner2",    // Change spinner animation
+        bgColor: "#5c2d91"      // Custom background colour
+    });
+        
+    </script>
+
+    
 
     <header class="mainHeader">
         <div class="title">
@@ -64,13 +86,16 @@
                         $('#discussion').append('<li><strong>' + encodedName
                             + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
                     };
+                        
                     // Get the user name and store it to prepend to messages.
                     $('#displayname').val(prompt('Enter your name:', ''));
+                    swal("Welcome to the live chat " + "\n" + $('#displayname').val());
                     // Set initial focus to message input box.
                     $('#message').focus();
                     // Start the connection.
                     $.connection.hub.start().done(function () {
                         $('#sendmessage').click(function () {
+                            
                             // Call the Send method on the hub.
                             chat.server.send($('#displayname').val(), $('#message').val());
                             // Clear text box and reset focus for next comment.
@@ -78,6 +103,7 @@
                         });
                         $(document).keypress(function (e) {
                             if (e.which == 13) {
+                                swal("Your message has been sent!");
                                 // Call the Send method on the hub.
                                 chat.server.send($('#displayname').val(), $('#message').val());
                                 // Clear text box and reset focus for next comment.

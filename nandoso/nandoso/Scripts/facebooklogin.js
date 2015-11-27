@@ -1,4 +1,5 @@
-﻿// This is called with the results from from FB.getLoginStatus().
+﻿
+// This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -17,8 +18,7 @@ function statusChangeCallback(response) {
     } else {
         // The person is not logged into Facebook, so we're not sure if
         // they are logged into this app or not.
-        document.getElementById('status').innerHTML = 'Please log ' +
-            'in to see our specials.';
+        document.getElementById('status').innerHTML = 'Log in here!';
     }
 }
 
@@ -73,6 +73,8 @@ FB.getLoginStatus(function (response) {
 // successful.  See statusChangeCallback() for when this call is made.
 function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
+
+
     FB.api('/me', function (response) {
         console.log('Successful login for: ' + response.name);
 

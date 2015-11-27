@@ -5,11 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function loadSpecials() {
-   
 
     specialsModule.getSpecials(setupSpecialsTable);
 
-    
 }
 
 // This is the callback for when the data comes back in the studentmodule

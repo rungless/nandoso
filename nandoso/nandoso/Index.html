@@ -4,9 +4,27 @@
     <title>Nandoso</title>
 	<meta charset="utf-8" />
     <link href="Content/style.css" rel="stylesheet" />
+    <link href="Content/fakeLoader.css" rel="stylesheet" />
 </head>
 
 <body class="body">
+
+    <div id="fakeLoader"></div>
+
+    <!-- Include jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="Scripts/fakeLoader.min.js"></script>
+
+    <!-- Using fakeLoader -->
+    <script type="text/javascript">
+    $("#fakeLoader").fakeLoader({
+        // imagePath:"yourPath/customizedImage.gif", //If you want can you insert your custom image
+        timeToHide: 1000,       // Animation lasts 1000 ms
+        zIndex: 999,            // Make sure that the loader is always on top of any other elements
+        spinner: "spinner2",    // Change spinner animation
+        bgColor: "#5c2d91"      // Custom background colour
+    });
+    </script>
 
         <header class="mainHeader">
             <div class="title">
