@@ -5,11 +5,15 @@
     <title>Live Chat</title>
     <style type="text/css">
         .container {
-            background-color: #99CCFF;
+            background-color: #57a4f8;
             border: thick solid #808080;
             padding: 20px;
             margin: 20px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
         }
+
     </style>
 </head>
 <body class="body">
@@ -71,6 +75,14 @@
                             chat.server.send($('#displayname').val(), $('#message').val());
                             // Clear text box and reset focus for next comment.
                             $('#message').val('').focus();
+                        });
+                        $(document).keypress(function (e) {
+                            if (e.which == 13) {
+                                // Call the Send method on the hub.
+                                chat.server.send($('#displayname').val(), $('#message').val());
+                                // Clear text box and reset focus for next comment.
+                                $('#message').val('').focus();
+                            }
                         });
                     });
                 });

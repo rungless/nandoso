@@ -8,7 +8,7 @@
     <link href="Content/style.css" rel="stylesheet" />
     <script src="Scripts/specialsModule.js"></script>
     <script src="Scripts/specials.js"></script>
-    
+    <script src="Scripts/facebooklogin.js"></script> 
 	
     <script type="text/javascript">
         var appInsights=window.appInsights||function(config){
@@ -20,6 +20,13 @@
         window.appInsights=appInsights;
         appInsights.trackPageView();
     </script>
+
+    <script>
+        $(document).ready(function(){
+                $("table").hide();
+        });
+    </script>
+
 </head>
 <body class="body">
     <header class="mainHeader">
@@ -39,12 +46,15 @@
     </header>
 
     <div class="mainContent">
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+        <div id="status"></div>
+
         <content>
             <table class="table table-striped spaced-table">
                 <thead>
                     <tr>
                         <th>Product Name</th>
-                        <th>Price</th>
+                        <th>Price ($)</th>
                         <th>Description</th>
                     </tr>
                 </thead>
